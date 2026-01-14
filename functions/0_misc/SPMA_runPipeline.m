@@ -42,9 +42,9 @@ function data = SPMA_runPipeline(data, pipelineFile, opt)
     %% Load pipeline
     allPipelines = cell(size(pipelineFile));
     for n_pipeline = 1:length(pipelineFile)
-        pipelineFile = pipelineFile{n_pipeline};
-        log.info(sprintf("Validate pipeline %s...", pipelineFile))
-        pipeline = SPMA_validatePipeline(pipelineFile);
+        currPipelineFile = pipelineFile{n_pipeline};
+        log.info(sprintf("Validate pipeline %s...", currPipelineFile))
+        pipeline = SPMA_validatePipeline(currPipelineFile);
         log.info("...Pipeline is valid!")
         log.info("\n"+jsonencode(pipeline, "PrettyPrint", true));
         allPipelines{n_pipeline} = pipeline;
@@ -52,7 +52,7 @@ function data = SPMA_runPipeline(data, pipelineFile, opt)
     log.info("Merging all pipelines")
     pipeline = mergeStruct(allPipelines{:},"addMissingFields",true);
     % Reorder fields
-    pipeline = orderfields(pipeline);
+%     pipeline = orderfields(pipeline);
     log.info("Final merged pipeline is:")
     log.info("\n"+jsonencode(pipeline, "PrettyPrint", true));
 

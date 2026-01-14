@@ -1,3 +1,4 @@
+function [EEG] = SPMA_chanedit(EEG, opt)
 % SPMA_CHANEDIT - edit channel file
 %
 % Usage:
@@ -17,11 +18,10 @@
 % 
 % See also: EEGLAB, POP_CHANEDIT
 
-function [EEG] = SPMA_chanedit(EEG, opt)
     arguments (Input)
         EEG struct
-        opt.method string {mustBeMember(opt.method, ["template", "coregistration"])}
-        opt.template string {mustBeMember(opt.template, ["besa_egi/32ch_quikcap.sfp","besa_egi/EGI129.elp","besa_egi/EGI65.elp",...
+        opt.Method string {mustBeMember(opt.Method, ["template", "coregistration"])}
+        opt.Template string {mustBeMember(opt.Template, ["","besa_egi/32ch_quikcap.sfp","besa_egi/EGI129.elp","besa_egi/EGI65.elp",...
             "besa_egi/GSN129.sfp","besa_egi/bti148.elp","besa_egi/msep.elp",...
             "eeglab/EGI-sensorplacement2.xyz","eeglab/Standard-10-10-Cap33.ced","eeglab/Standard-10-10-Cap47.ced",...
             "eeglab/Standard-10-20-Cap19.ced","eeglab/Standard-10-20-Cap25.ced","eeglab/Standard-10-20-Cap81.ced",...
@@ -41,7 +41,7 @@ function [EEG] = SPMA_chanedit(EEG, opt)
             "philips_neuro/egi256_GSN.sfp","philips_neuro/egi256_GSN_HydroCel.sfp","philips_neuro/egi64_GSN_HydroCel_v1_0.sfp",...
             "philips_neuro/egi64_GSN_v1_0.sfp","philips_neuro/egi64_GSN_v2_0.sfp",...
             "polhemus/eetrak124.elc","polhemus/electrocap72.elp"])}
-        opt.chan_file string
+        opt.File string
         opt.EEGLAB (1,:) cell
         % Save options
         opt.Save logical
@@ -59,7 +59,7 @@ function [EEG] = SPMA_chanedit(EEG, opt)
     module = "preprocessing";
 
     %% Parsing arguments
-    config = SPMA_loadConfig(module, "channelfile", opt);
+    config = SPMA_loadConfig(module, "chanedit", opt);
 
     %% Logger
     logConfig = SPMA_loadConfig(module, "logging", opt);

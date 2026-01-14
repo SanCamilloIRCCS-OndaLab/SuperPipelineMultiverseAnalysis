@@ -61,6 +61,10 @@ config.general = general;
 preproc = struct();
 
 % All the configurations
+preproc.chanedit.Method = "template";
+preproc.chanedit.Template = "";
+preproc.File = "";
+
 preproc.resample.Frequency = 250;     % [Hz] Sample frequency for resampling
 preproc.resample.EEGLAB = {};
 preproc.resample.Save = false;        % 
