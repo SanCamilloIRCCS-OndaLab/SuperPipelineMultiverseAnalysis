@@ -120,6 +120,18 @@ preproc.iclabel.Save = true;
 preproc.iclabel.SaveName = "iclabel";
 preproc.iclabel.OutputFolder = "";
 
+% ICFlag
+preproc.icflag.Brain = [NaN NaN];
+preproc.icflag.Muscle = [0.9 1];
+preproc.icflag.Eye = [0.9 1];
+preproc.icflag.Heart = [NaN NaN];
+preproc.icflag.LineNoise = [NaN NaN];
+preproc.icflag.ChannelNoise = [NaN NaN];
+preproc.icflag.Other = [NaN NaN];
+preproc.icflag.Save = true;
+preproc.icflag.SaveName = "icflag";
+preproc.icflag.OutputFolder = "";
+
 
 
 % Logging
