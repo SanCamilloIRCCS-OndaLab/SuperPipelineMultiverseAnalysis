@@ -63,7 +63,7 @@ function [EEG] = SPMA_icflag(EEG, opt)
         error("SPMA: No Classification", "No ICLabel classification found")
     end
 
-    %% Build Threshold Matriz
+    %% Build Threshold Matrix
     % pop_icflag expects a 7x2 matrix in a specific order: 
     % 1.Brain, 2.Muscle, 3.Eye, 4.Heart, 5.LineNoise, 6.ChannelNoise,
     % 7.Other
