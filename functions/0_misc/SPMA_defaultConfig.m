@@ -149,8 +149,13 @@ preproc.epoch.Save = true;
 preproc.epoch.SaveName = "epoched";
 preproc.epoch.OutputFolder = "";
 
-
-
+% Epoch Rejection
+preproc.rejepochs.Threshold = 100;
+preproc.rejepochs.Channels = [];
+preproc.rejepochs.TimeLimits = [];
+preproc.rejepochs.Save = true;
+preproc.rejepochs.SaveName = "epoch_rej";
+preproc.rejepochs.OutputFolder = "";
 
 % Logging
 preproc.logging.LogEnabled = true;
