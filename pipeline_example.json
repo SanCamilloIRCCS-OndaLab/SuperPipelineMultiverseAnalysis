@@ -74,5 +74,32 @@
             "Eye": [0.8, 1], 
             "Heart" : [0.9, 1]
         }
+    },
+    "step9": {
+        "function" : "SPMA_subcomp", 
+        "save": true, 
+        "name": "IC_rej"
+    },
+    "step10": {
+        "function": "SPMA_epoch",
+        "name": "rs_epoched_4s",
+        "save": true,
+        "params": {
+            "Mode": "Time",
+            "Recurrence": 4,
+            "Limits": [0, 4],
+            "Baseline": [0, 4]
+        }
+    },
+    "step11": {
+        "function": "SPMA_rejepochs",
+        "name": "final_clean_data",
+        "save": true,
+        "params": {
+            "Threshold": 100,
+            "Channels": [],
+            "TimeLimits": [],
+            "ConfirmRej": true
+        }
     }
 }
