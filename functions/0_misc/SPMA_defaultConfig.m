@@ -135,9 +135,31 @@ preproc.icflag.OutputFolder = "";
 % SubComp
 preproc.subcomp.Components = [];
 preproc.subcomp.Keep = false;
+preproc.subcomp.Visualize = false;
 preproc.subcomp.Save = true;
 preproc.subcomp.SaveName = "subcomp";
 preproc.subcomp.OutputFolder = "";
+
+%%
+% ICA Macro
+preproc.ica.Extended = 1;
+preproc.ica.Version = "default";
+% Thresholds
+preproc.ica.Brain = [0 0];
+preproc.ica.Muscle = [0 0];
+preproc.ica.Eye = [0 0];
+preproc.ica.Heart = [0 0];
+preproc.ica.LineNoise = [0 0];
+preproc.ica.ChannelNoise = [0 0];
+preproc.ica.Other = [0 0];
+% Intermediate Save
+preproc.ica.SaveWeights = true;             
+preproc.ica.SaveWeightsName = "ICA_weights";
+% Visualization & Final Save
+preproc.ica.Visualize = false;
+preproc.ica.Save = true;
+preproc.ica.SaveName = "";
+preproc.ica.OutputFolder = "";
 
 % Epoching
 preproc.epoch.Mode = "Event";
